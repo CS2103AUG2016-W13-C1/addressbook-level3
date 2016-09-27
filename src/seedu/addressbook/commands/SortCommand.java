@@ -36,7 +36,7 @@ public class SortCommand extends Command {
 
     private class PersonsNameComparator implements Comparator<Person> {
         public int compare(Person p1, Person p2) {
-            return p1.getName().toString().compareTo(p2.getName().toString());
+            return p1.getName().toString().toLowerCase().compareTo(p2.getName().toString().toLowerCase());
         }
 
         public boolean equals(Object obj) {

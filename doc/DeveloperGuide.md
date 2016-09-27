@@ -52,6 +52,10 @@ Priority | As a ... | I want to ... | So that I can...
 `* *` | user | store multiple emails and phone numbers under one person | have more complete information
 >>>>>>> 33c9dfcc7390baf6279d90d43e5aeea4c2788186
 `*` | user with many persons in the address book | sort persons by name | locate a person easily
+`* *` | user | edit entry particulars | make edits to existing records without deleting and adding new entries
+`*` | user | export specific entries | easily port details over to other programs or send it to others
+
+
 
 
 ## Appendix B : Use Cases

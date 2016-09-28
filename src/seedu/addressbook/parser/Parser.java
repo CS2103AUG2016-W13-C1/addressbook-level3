@@ -108,13 +108,13 @@ public class Parser {
             return new AddCommand(
                     matcher.group("name"),
 
-                    matcher.group("phone"),
+                    matcher.group("phone").split("/"),
                     isPrivatePrefixPresent(matcher.group("isPhonePrivate")),
 
-                    matcher.group("email"),
+                    matcher.group("email").split("/"),
                     isPrivatePrefixPresent(matcher.group("isEmailPrivate")),
 
-                    matcher.group("address"),
+                    matcher.group("address").split("/"),
                     isPrivatePrefixPresent(matcher.group("isAddressPrivate")),
 
                     getTagsFromArgs(matcher.group("tagArguments"))

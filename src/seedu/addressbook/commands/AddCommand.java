@@ -18,8 +18,10 @@ public class AddCommand extends Command {
     public static final String MESSAGE_USAGE = COMMAND_WORD + ":\n" + "Adds a person to the address book. "
             + "Contact details can be marked private by prepending 'p' to the prefix.\n\t"
             + "Parameters: NAME [p]p/PHONE [p]e/EMAIL [p]a/ADDRESS  [t/TAG]...\n\t"
+            + "Parameters: NAME [p]p/PHONE1/PHONE2/... [p]e/EMAIL1/EMAIL2/... [p]a/ADDRESS1/ADDRESS2/..."
             + "Example: " + COMMAND_WORD
-            + " John Doe p/98765432 e/johnd@gmail.com a/311, Clementi Ave 2, #02-25 t/friends t/owesMoney";
+            + " John Doe p/98765432 e/johnd@gmail.com a/311, Clementi Ave 2, #02-25 t/friends t/owesMoney"
+            + " Adam Bob p/12345678/98765432 e/adam@gmail.com/bob@gmail.com a/311, Clementi Ave 2, #02-26/ a/311, Clementi Ave 5, #02-27 t/friends t/owesMoney";
 
     public static final String MESSAGE_SUCCESS = "New person added: %1$s";
     public static final String MESSAGE_DUPLICATE_PERSON = "This person already exists in the address book";
@@ -32,9 +34,9 @@ public class AddCommand extends Command {
      * @throws IllegalValueException if any of the raw values are invalid
      */
     public AddCommand(String name,
-                      String phone, boolean isPhonePrivate,
-                      String email, boolean isEmailPrivate,
-                      String address, boolean isAddressPrivate,
+                      String[] phones, boolean isPhonePrivate,
+                      String[] emails, boolean isEmailPrivate,
+                      String[] addresses, boolean isAddressPrivate,
                       Set<String> tags) throws IllegalValueException {
         final Set<Tag> tagSet = new HashSet<>();
         for (String tagName : tags) {
@@ -42,9 +44,9 @@ public class AddCommand extends Command {
         }
         this.toAdd = new Person(
                 new Name(name),
-                new Phone(phone, isPhonePrivate),
-                new Email(email, isEmailPrivate),
-                new Address(address, isAddressPrivate),
+                new Phone(phones, isPhonePrivate),
+                new Email(emails, isEmailPrivate),
+                new Address(addresses, isAddressPrivate),
                 new UniqueTagList(tagSet)
         );
     }

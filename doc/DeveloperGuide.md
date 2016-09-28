@@ -45,15 +45,12 @@ Priority | As a ... | I want to ... | So that I can...
 `* * *` | user | add a new person |
 `* * *` | user | delete a person | remove entries that I no longer need
 `* * *` | user | find a person by name | locate details of persons without having to go through the entire list
-<<<<<<< HEAD
-`* *` | user | hide [private contact details](#private-contact-detail) by default | minimize chance of someone else seeing them by accident
-=======
 `* *` | user | hide [private contact details](#private-contact-detail) by default | to minimize chance of someone else seeing them by accident
 `* *` | user | store multiple emails and phone numbers under one person | have more complete information
->>>>>>> 33c9dfcc7390baf6279d90d43e5aeea4c2788186
 `*` | user with many persons in the address book | sort persons by name | locate a person easily
 `* *` | user | edit entry particulars | make edits to existing records without deleting and adding new entries
 `*` | user | export specific entries | easily port details over to other programs or send it to others
+`*` | user | add notes to a person | include random information not suitable to be stored as a tag
 
 
 
